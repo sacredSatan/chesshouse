@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #002366; /* Navy */
+    --secondary-color: #D4AF37; /* Gold */
+    --accent-color: #B8860B; /* Dark Gold */
+    --bg-color: #FDFDFD;
+    --text-color: #1A1A1A;
+    --muted-text: #4A4A4A;
+    --font-heading: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.03) 0, transparent 40%),
+        radial-gradient(circle at 0% 0%, rgba(0, 35, 102, 0.03) 0, transparent 40%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+    padding: 6rem 3rem;
+    background: #ffffff;
+    box-shadow: 0 40px 100px rgba(0, 35, 102, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 4px;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    pointer-events: none;
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: translateY(-5px);
+}
+
+.content {
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--secondary-color);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.footer {
+    padding-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--muted-text);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.8rem;
+    }
+    .container {
+        padding: 4rem 1.5rem;
+    }
+}
